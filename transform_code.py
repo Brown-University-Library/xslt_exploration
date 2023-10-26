@@ -8,7 +8,7 @@ from lxml import etree
 
 ## laod source XML --------------------------------------------------
 source_xml = b''
-with open( './source_files/student_tests.xml', 'rb' ) as f:
+with open( './source_files/source.xml', 'rb' ) as f:
     source_xml = f.read()
 assert type(source_xml) == bytes
 
