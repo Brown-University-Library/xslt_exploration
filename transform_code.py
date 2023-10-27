@@ -24,7 +24,7 @@ Usage...
 from lxml import etree
 
 ## laod source XML --------------------------------------------------
-source_xml = b''
+source_xml = b''  # see "bytes" note above
 with open( './source_files/source.xml', 'rb' ) as f:
     source_xml = f.read()
 assert type(source_xml) == bytes
@@ -36,14 +36,14 @@ with open( './source_files/stylesheet.xsl', 'rb' ) as f:
 assert type(xslt_stylesheet) == bytes
 
 ## create XML tree objects ------------------------------------------
-source_tree = etree.fromstring(source_xml)
-xslt_tree = etree.fromstring(xslt_stylesheet)
+source_tree = etree.fromstring( source_xml )
+xslt_tree = etree.fromstring( xslt_stylesheet )
 
 ## create transformer object ----------------------------------------
-transform = etree.XSLT(xslt_tree)
+transformer = etree.XSLT( xslt_tree )
 
 ## apply transformation ---------------------------------------------
-result_tree = transform(source_tree)
+result_tree = transformer( source_tree )
 
 ## convert result tree-object to string -----------------------------
 result_str = etree.tostring( result_tree, pretty_print=True).decode( 'utf-8' )
