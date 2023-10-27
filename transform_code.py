@@ -19,6 +19,8 @@ Usage...
   $ python ./transform_code.py
 
   The 'print' statement at the end will print the result to the console.
+
+  Thanks to ChatGPT4 for making it so easy to create this example: <https://chat.openai.com/share/a79e139e-f6ca-40d7-8472-fb796997bec5>.
 """
 
 from lxml import etree
